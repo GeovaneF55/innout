@@ -1,5 +1,6 @@
 <?php
   $errors = [];
+  $alertType = 'info';
 
   if($exception) {
     $message = [
@@ -12,20 +13,20 @@
     }
   }
 
-  $alertType = '';
-
-  if ($message['type'] === 'error') {
-    $alertType = 'danger';
-  } elseif ($message['type'] === 'warning') {
-    $alertType = 'warning';
-  } elseif ($message['type'] === 'success') {
-    $alertType = 'success';
-  } else {
-    $alertType = 'info';
+  $hasMessage = isset($message);
+  
+  if($hasMessage) {
+    if ($message['type'] === 'error') {
+      $alertType = 'danger';
+    } elseif ($message['type'] === 'warning') {
+      $alertType = 'warning';
+    } elseif ($message['type'] === 'success') {
+      $alertType = 'success';
+    }
   }
 ?>
 
-<?php if($message): ?>
+<?php if($hasMessage): ?>
   <div class="alert alert-<?= $alertType ?>">
     <?= $message['message'] ?>
   </div>

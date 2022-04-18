@@ -7,10 +7,9 @@
 
     try {
       $user = $login->checkLogin();
-      echo "Login efetuado com sucesso!";
       // $_SESSION['user'] = $user;
       header('Location: day_records.php');
-    } catch(ValidationException $e) {
+    } catch(AppException $e) {
       $exception = $e;
     }
   }
