@@ -17,7 +17,9 @@
     }
 
     public function __get($key) {
-      return $this->values[$key];
+      return array_key_exists($key, $this->values)
+        ? $this->values[$key]
+        : null;
     }
 
     public function __set($key, $value) {
@@ -52,6 +54,17 @@
       } else {
         return $result;
       }
+    }
+
+    public function save() {
+      $sql = "INSERT INTO " . static::$tableName . " ("
+        . implode(",", static::$columns) . ") VALUES (";
+      foreach (static::$columns as $column) {
+        $sql .= static::getFormatedValue($this->$column) . ",";
+      }
+      $sql = substr($sql, 0, -1) . ");";
+      $id = Database::executeSQL($sql);
+      $this->id = $id;
     }
 
     private static function getFilters($filters) {

@@ -15,4 +15,6 @@
     }
   }
 
-  loadView('login', $_POST + ['exception' => $exception]);
+  $data = $_POST + ['exception' => $exception];
+
+  loadView('login', $data);

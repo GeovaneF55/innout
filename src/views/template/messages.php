@@ -2,7 +2,7 @@
   $errors = [];
   $alertType = 'info';
 
-  if($exception) {
+  if(isset($exception)) {
     $message = [
       'type' => 'error',
       'message' => $exception->getMessage()

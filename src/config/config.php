@@ -2,6 +2,9 @@
   date_default_timezone_set('Europe/Lisbon');
   setLocale(LC_ALL, 'pt_BR', 'pt_BR.utf8', 'portuguese');
 
+  // CONSTANTES
+  define('DAILY_TIME', 60 * 60 * 8);
+
   // PASTAS
   define('CONFIG_PATH', realpath(dirname(__FILE__)));
   define('MODEL_PATH', realpath(CONFIG_PATH . '/../models'));
@@ -14,6 +17,7 @@
   require_once(realpath(CONFIG_PATH . '/database.php'));
   require_once(realpath(CONFIG_PATH . '/loader.php'));
   require_once(realpath(CONFIG_PATH . '/session.php'));
+  require_once(realpath(CONFIG_PATH . '/date_utils.php'));
   require_once(realpath(MODEL_PATH . '/Model.php'));
   require_once(realpath(MODEL_PATH . '/User.php'));
   require_once(realpath(EXCEPTION_PATH . '/AppException.php'));

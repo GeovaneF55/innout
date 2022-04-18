@@ -26,4 +26,16 @@ class Database {
 
     return $result;
   }
+
+  public static function executeSQL($query) {
+    $conn = self::getConnection();
+
+    if(!mysqli_query($conn, $query)) {
+      throw new Exception(mysqli_error($conn));
+    }
+    $id = $conn->insert_id;
+    $conn->close();
+
+    return $id;
+  }
 }
