@@ -5,8 +5,6 @@
   
   $uri = urldecode($_SERVER['REQUEST_URI']);
 
-  //die($uri);
-
   if($uri === '/' || $uri === "" || $uri === "/index.php") {
     $uri = '/login.php';
   }
