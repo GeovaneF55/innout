@@ -13,6 +13,8 @@
   // ARQUIVOS
   require_once(realpath(CONFIG_PATH . '/database.php'));
   require_once(realpath(CONFIG_PATH . '/loader.php'));
+  require_once(realpath(CONFIG_PATH . '/session.php'));
   require_once(realpath(MODEL_PATH . '/Model.php'));
+  require_once(realpath(MODEL_PATH . '/User.php'));
   require_once(realpath(EXCEPTION_PATH . '/AppException.php'));
   require_once(realpath(EXCEPTION_PATH . '/ValidationException.php'));
