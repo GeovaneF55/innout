@@ -81,8 +81,13 @@
       if(count($filters) > 0) {
         $sql .= ' WHERE ';
         $i = 0;
-        foreach ($filters as $key => $value) {
-          $sql .= $key . ' = ' . static::getFormatedValue($value);
+        foreach ($filters as $column => $value) {
+          if($column == 'raw') {
+            $sql .= $value;
+          } else {
+            $sql .= $column . ' = ' . static::getFormatedValue($value);
+          }
+
           if($i < count($filters) - 1) {
             $sql .= ' AND ';
           }

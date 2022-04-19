@@ -1,6 +1,4 @@
 <?php
-  loadModel('WorkingHours');
-
   Database::executeSQL('DELETE FROM working_hours');
   Database::executeSQL('ALTER TABLE working_hours AUTO_INCREMENT = 1');
   Database::executeSQL('DELETE FROM users WHERE id > 5');
