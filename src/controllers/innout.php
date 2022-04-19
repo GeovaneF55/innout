@@ -10,7 +10,7 @@
   try {
     $currentTime = strftime('%H:%M:%S', time());
 
-    if($_POST['forcedTime']) {
+    if(isset($_POST['forcedTime'])) {
       $currentTime = $_POST['forcedTime'];
     }
 
