@@ -56,7 +56,7 @@
       }
     }
 
-    public function save() {
+    public function insert() {
       $sql = "INSERT INTO " . static::$tableName . " ("
         . implode(",", static::$columns) . ") VALUES (";
       foreach (static::$columns as $column) {
@@ -65,6 +65,15 @@
       $sql = substr($sql, 0, -1) . ");";
       $id = Database::executeSQL($sql);
       $this->id = $id;
+    }
+
+    public function update() {
+      $sql = "UPDATE " . static::$tableName . " SET ";
+      foreach (static::$columns as $column) {
+        $sql .= "{$column} = " . static::getFormatedValue($this->$column) . ",";
+      }
+      $sql = substr($sql, 0, -1) . " WHERE id = {$this->id};";
+      Database::executeSQL($sql);
     }
 
     private static function getFilters($filters) {
