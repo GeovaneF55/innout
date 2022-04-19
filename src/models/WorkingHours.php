@@ -36,6 +36,19 @@
       return null;
     }
 
+    public function getAtiveClocks() {
+      $nextTime = $this->getNextTime();
+      if($nextTime == 'time1') {
+        return ['exitTime'];
+      } elseif ($nextTime == 'time3') {
+        return ['lunchInterval', 'exitTime'];
+      } elseif($nextTime == 'time2' || $nextTime == 'time4') {
+        return ['workedInterval'];
+      } else {
+        return [];
+      }
+    }
+
     public function innout($time) {
       $timeColumn = $this->getNextTime();
       if(is_null($timeColumn)) {

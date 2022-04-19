@@ -31,7 +31,8 @@
     <div class="sidebar-widget">
       <i class="icon icofont-hour-glass text-primary"></i>
       <div class="info">
-        <span class="main text-primary">
+        <span class="main text-primary"
+          <?= in_array('workedInterval', $activeClocks) ? 'active-clock' : '' ?>>
           <?= $workedInterval ?>
         </span>
         <span class="label text-muted">
@@ -43,7 +44,8 @@
     <div class="sidebar-widget">
       <i class="icon icofont-lunch text-warning"></i>
       <div class="info">
-        <span class="main text-warning">
+        <span class="main text-warning"
+          <?= in_array('lunchInterval', $activeClocks) ? 'active-clock' : '' ?>>
           <?= $lunchInterval ?>
         </span>
         <span class="label text-muted">
@@ -55,7 +57,8 @@
     <div class="sidebar-widget">
       <i class="icon icofont-ui-alarm text-danger"></i>
       <div class="info">
-        <span class="main text-danger">
+        <span class="main text-danger"
+          <?= in_array('exitTime', $activeClocks) ? 'active-clock' : '' ?>>
           <?= $exitTime ?>
         </span>
         <span class="label text-muted">

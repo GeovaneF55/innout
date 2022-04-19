@@ -32,6 +32,7 @@
     $workedInterval = $workingHours->getWorkedInterval()->format('%H:%I:%S');
     $lunchInterval = $workingHours->getLunchInterval()->format('%H:%I:%S');
     $exitTime = $workingHours->getExitTime()->format('H:i:s');
+    $activeClocks = $workingHours->getAtiveClocks();
 
     require_once(TEMPLATE_PATH . "/header.php");
     require_once(TEMPLATE_PATH . "/left.php");
