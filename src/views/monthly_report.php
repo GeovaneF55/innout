@@ -7,6 +7,29 @@
     );
   ?>
   <div>
+    <form class="mb-4" action="#" method="post">
+      <div class="input-group">
+        <?php if($user->is_admin): ?>
+          <select name="user" id="user" class="form-control mr-2"
+            placeholder="Selecione o Usuário...">
+            <?php foreach($users as $user) : ?>
+            <?php $selected = $user->id === $selectedUser ? 'selected' : ''; ?>
+              <option value='<?= $user->id ?>' <?= $selected ?>><?= $user->name ?></option>;
+            <?php endforeach ?>
+          </select>
+        <?php endif ?>
+        <select name="period" id="period" class="form-control mr-2"
+          placeholder="Selecione o Período...">
+          <?php foreach($periods as $key => $month) : ?>
+          <?php $selected = $key === $selectedPeriod ? 'selected' : ''; ?>
+            <option value='<?= $key ?>' <?= $selected ?>><?= $month ?></option>;
+          <?php endforeach ?>
+        </select>
+        <button class="btn btn-primary">
+          <i class="icofont-search"></i>
+        </button>
+      </div>
+    </form>
     <table class="table table-bordered table-striped table-hover">
       <thead>
         <th>Dia</th>
