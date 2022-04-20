@@ -1,7 +1,7 @@
 <?php
   class Login extends Model {
 
-    public function validate() {
+    private function validate() {
       $errors = [];
 
       if(!$this->email) {

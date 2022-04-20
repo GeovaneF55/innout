@@ -1,27 +1,27 @@
 <?php
   function addSuccessMessage($message) {
-    return [
+    $_SESSION['message'] = [
       'type' => 'success',
       'message' => $message
     ];
   }
 
   function addErrorMessage($message) {
-    return [
+    $_SESSION['message'] = [
       'type' => 'error',
       'message' => $message
     ];
   }
 
   function addWarningMessage($message) {
-    return [
+    $_SESSION['message'] = [
       'type' => 'warning',
       'message' => $message
     ];
   }
 
   function addInfoMessage($message) {
-    return [
+    $_SESSION['message'] = [
       'type' => 'info',
       'message' => $message
     ];

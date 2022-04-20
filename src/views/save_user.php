@@ -20,7 +20,7 @@
       </div>
       <div class="form-group col-md-6">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="Informe o Email"
+        <input type="text" name="email" id="email" placeholder="Informe o Email"
           class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
           value="<?= isset($email) ? $email : '' ?>">
         <div class="invalid-feedback">

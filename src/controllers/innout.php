@@ -13,9 +13,9 @@
     }
 
     $records->innout($currentTime);
-    $_SESSION['message'] = addSuccessMessage('Ponto inserido com sucesso!');
+    addSuccessMessage('Ponto inserido com sucesso!');
   } catch(AppException $e) {
-    $_SESSION['message'] = addErrorMessage($e->getMessage());
+    addErrorMessage($e->getMessage());
   }
 
   header('Location: day_records.php');
