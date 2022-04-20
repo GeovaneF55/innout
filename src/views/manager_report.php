@@ -1,10 +1,9 @@
 <main class="content">
   <?php
-    renderTitle(
-      'Relatório Gerencial',
-      'Resumo das horas trabalhadas dos funcionários',
-      'icofont-chart-histogram'
-    );
+    $title = 'Relatório Gerencial';
+    $subtitle = 'Resumo das horas trabalhadas dos funcionários';
+    $icon = 'icofont-chart-histogram';
+    renderTitle($title, $subtitle, $icon);
   ?>
   <div class="summary-boxes">
     <div class="summary-box bg-primary">

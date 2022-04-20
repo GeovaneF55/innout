@@ -1,10 +1,9 @@
 <main class="content">
   <?php
-    renderTitle(
-      'Relatório Mensal',
-      'Acompanhe seu saldo de horas',
-      'icofont-ui-calendar'
-    );
+    $title = 'Relatório Mensal';
+    $subtitle = 'Acompanhe seu saldo de horas';
+    $icon = 'icofont-ui-calendar';
+    renderTitle($title, $subtitle, $icon);
   ?>
   <div>
     <form class="mb-4" action="#" method="post">
