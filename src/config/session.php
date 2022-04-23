@@ -1,6 +1,6 @@
 <?php
   function requireValidSession($requiresAdmin = false) {
-    $user = $_SESSION['user'];
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
     if(!isset($user)) {
       header('Location: login.php');
       exit();
